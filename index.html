@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Roman Numerals — Convert Numbers &amp; Dates to Roman Numerals | S3eidat Tools</title>
+<meta name="description" content="Convert numbers to Roman numerals and back, with step-by-step working and clear reasons when a numeral is malformed. Turn dates into Roman numerals for tattoos and engravings. Free and private.">
+<meta property="og:title" content="Roman Numerals — free, private converter">
+<meta property="og:description" content="Convert Roman numerals both ways. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="roman-numerals">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Roman Numerals</h1>
+    <p>Type a number or a Roman numeral; the other side follows, with the working shown step by step. Malformed numerals get a plain-English reason.</p>
+  </section>
+
+  <section class="card stack">
+    <div class="rn-conv">
+      <label class="field">Number
+        <input class="input big" id="n" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="1994">
+      </label>
+      <span class="arrow" aria-hidden="true">⇄</span>
+      <label class="field">Roman numeral
+        <input class="input big roman" id="r" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="MCMXCIV">
+      </label>
+    </div>
+    <div class="row between">
+      <span class="chip" id="status">Type on either side</span>
+      <div class="row">
+        <button class="btn small" id="copy-n"><svg class="i"><use href="#i-copy"/></svg>Number</button>
+        <button class="btn small" id="copy-r"><svg class="i"><use href="#i-copy"/></svg>Roman</button>
+      </div>
+    </div>
+    <div class="steps" id="steps" aria-live="polite"></div>
+  </section>
+
+  <div class="grid-2 mt top">
+    <section class="card stack">
+      <h2>Date in Roman numerals</h2>
+      <div class="row date-row">
+        <label class="field grow">Date <input class="input" id="date" type="date" min="0001-01-01" max="3999-12-31"></label>
+        <label class="field">Order
+          <select class="select" id="order">
+            <option value="dmy">Day · Month · Year</option>
+            <option value="mdy">Month · Day · Year</option>
+            <option value="ymd">Year · Month · Day</option>
+          </select>
+        </label>
+        <label class="field">Separator
+          <select class="select" id="sep">
+            <option value=" · ">·</option><option value=".">.</option><option value=" - ">-</option><option value=" / ">/</option><option value=" ">space</option>
+          </select>
+        </label>
+      </div>
+      <div class="date-out" id="date-out"></div>
+      <div class="row between">
+        <span class="faint">Check twice before inking: there is no zero, and no year above 3999.</span>
+        <button class="btn small" id="copy-d"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+      </div>
+    </section>
+
+    <section class="card stack">
+      <h2>The rules</h2>
+      <div class="symbols">
+        <span><b>I</b>1</span><span><b>V</b>5</span><span><b>X</b>10</span><span><b>L</b>50</span><span><b>C</b>100</span><span><b>D</b>500</span><span><b>M</b>1000</span>
+      </div>
+      <ul class="rules">
+        <li>Symbols are written largest first and added: <code>VIII</code> = 5 + 3.</li>
+        <li>A smaller symbol before a larger one is subtracted, but only <code>IV IX XL XC CD CM</code>.</li>
+        <li><code>I X C M</code> repeat up to 3 times; <code>V L D</code> never repeat.</li>
+        <li>The standard range is 1 to 3,999. Larger numbers used a <b>vinculum</b>: a bar over a numeral multiplies it by 1,000 (V̄ = 5,000).</li>
+      </ul>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

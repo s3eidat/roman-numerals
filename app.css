@@ -1,0 +1,29 @@
+.rn-conv { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 14px; align-items: end; }
+@media (max-width: 640px) { .rn-conv { grid-template-columns: minmax(0, 1fr); } .arrow { justify-self: center; transform: rotate(90deg); } }
+.input.big { font-size: 30px; font-weight: 700; min-height: 64px; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.input.roman { font-family: Georgia, "Times New Roman", serif; letter-spacing: .08em; color: var(--accent); }
+.arrow { font-size: 22px; color: var(--text-3); padding-bottom: 16px; }
+.chip.ok { color: var(--ok); }
+
+.steps { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; min-height: 20px; }
+.step { display: grid; justify-items: center; gap: 2px; padding: 8px 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); min-width: 54px; }
+.step b { font-family: Georgia, "Times New Roman", serif; font-size: 20px; letter-spacing: .06em; }
+.step span { font-size: 12.5px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.step.minus span { color: var(--danger); }
+.op { color: var(--text-3); font-weight: 600; }
+.total { font-weight: 700; color: var(--accent); font-size: 18px; }
+.steps .why { width: 100%; padding: 10px 12px; border-radius: 10px; background: var(--danger-soft); color: var(--danger); font-size: 13.5px; }
+.steps .why b { color: var(--text); }
+
+.grid-2.top { align-items: start; }
+.date-row { align-items: end; gap: 10px; }
+.date-row label.field { min-width: 0; }
+.date-out { padding: 18px; border-radius: 14px; background: var(--accent-soft); text-align: center; font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 4vw, 32px); letter-spacing: .08em; color: var(--accent); overflow-wrap: anywhere; min-height: 72px; }
+.date-out small { display: block; font-family: var(--font); font-size: 12.5px; letter-spacing: 0; color: var(--text-2); margin-top: 4px; }
+
+.symbols { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.symbols span { display: grid; justify-items: center; padding: 8px 2px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); font-size: 12px; color: var(--text-2); }
+.symbols b { font-family: Georgia, "Times New Roman", serif; font-size: 20px; color: var(--text); }
+.rules { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--text-2); font-size: 13.5px; line-height: 1.5; }
+.rules b { color: var(--text); }
